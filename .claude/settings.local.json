@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"/Users/liyao/claude-github-skill\" status --short)",
+      "Bash(git -C \"/Users/liyao/claude-github-skill\" log --oneline -5)",
+      "Skill(update-config)",
+      "Bash(git:*)"
+    ]
+  }
+}
