@@ -18,3 +18,12 @@ __pycache__/
 # Environment
 .env
 .env.*
+
+# Claude Code local state
+.claude/settings.local.json
+.claude/history/
+.claude/tmp/
+
+# Build and scratch outputs
+outputs/
+tmp/
