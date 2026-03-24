@@ -38,12 +38,13 @@ So this repository is best understood as the **design, refinement, and packaging
 | Path | Role |
 | --- | --- |
 | `README.md` | project overview, current workflow, and repository intent |
+| `SKILL.md` | canonical maintained `/github` skill definition for this repository |
 | `openclaw-github-SKILL.md` | upstream reference material pulled from OpenClaw for comparison and adaptation |
 | `.claude/settings.local.json` | local Claude Code permission/config context used while iterating in this repo |
 
 ## Current usage model
 
-The repo-local copy of the skill was intentionally removed after the global install was set up.
+The repo-local Claude-discovery copy was intentionally removed after the global install was set up, but the repository still keeps the canonical skill source in `SKILL.md`.
 
 Use the skill from Claude Code through:
 
