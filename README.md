@@ -1,69 +1,94 @@
 # claude-github-skill
 
-> A polished workspace for designing and refining a unified Claude Code `/github` skill that spans both local Git workflow and remote GitHub operations.
+A Claude Code skill for GitHub workflows that combines local `git` operations with remote GitHub actions through `gh`.
 
----
+`SKILL.md` is the canonical skill definition in this repository. This README is the project landing page.
 
-## Overview
+## What it does
 
-This repository is the working area for shaping a single `/github` interface around the full day-to-day developer loop:
+The skill is designed for the full repository workflow, including:
 
-- **Local Git workflow** — `commit`, `push`, `pull`, `branch`, `checkout`, `merge`, `rebase`
-- **Remote GitHub workflow** — pull requests, issues, and CI / workflow runs
+- local repository state inspection
+- branch management and sync flow
+- commits, pulls, pushes, merges, and rebases
+- pull request and issue workflows
+- CI / workflow run inspection
+- moving cleanly between local git state and remote GitHub collaboration
 
-The active installed copy currently lives in the global Claude skills directory:
+## Why this repo exists
+
+This repository exists to develop, refine, and package the `/github` skill as a standalone project.
+
+While the repository is used as the source workspace, the active installed copy can also live in Claude Code's global skills directory:
 
 - `/Users/liyao/.claude/skills/github/SKILL.md`
 
-So this repository is best understood as the **design, refinement, and packaging workspace** for that skill.
+That means you can keep iterating here while consuming the installed skill globally from Claude Code.
+
+## Canonical source
+
+- `SKILL.md` — canonical skill definition for this project
+- `README.md` — project overview and usage notes
+- `openclaw-github-SKILL.md` — upstream reference material used for comparison and adaptation
+
+If README and `SKILL.md` ever diverge, treat `SKILL.md` as the source of truth.
+
+## Install and use
+
+### Option 1: global Claude Code install
+
+Install or copy the skill into Claude Code's global skills directory so `/github` is available across repos:
+
+```text
+~/.claude/skills/github/SKILL.md
+```
+
+In this setup, this repository remains the authoring source while Claude Code consumes the globally installed skill.
+
+### Option 2: consume from claudespace
+
+This project can also be consumed from a larger skills workspace such as `claudespace`, where it may be included as a child repository or submodule for centralized skill management.
+
+This README does not assume a specific parent-workspace setup. The child repo remains independently useful as the maintained source for the skill.
 
 ## Scope
 
-### Local Git operations
+The skill intentionally covers both sides of GitHub-centric development:
+
+### Local Git workflow
 
 - inspect repository state safely
-- manage branches and sync flow
-- support common Git actions like `commit`, `pull`, `push`, `merge`, and `rebase`
-- keep higher-impact actions explicit and controlled
+- manage branches
+- commit and sync changes
+- merge or rebase with explicit user intent
 
-### Remote GitHub operations
+### Remote GitHub workflow
 
-- inspect and manage pull requests
-- inspect and manage issues
-- check CI / workflow status with `gh`
-- connect local branch state with GitHub collaboration flow
+- inspect or manage pull requests
+- inspect or manage issues
+- inspect CI and workflow runs
+- bridge local branch state with GitHub collaboration flow
 
-## Repository contents
+## Project goals
 
-| Path | Role |
+- keep Git and GitHub operations in one coherent skill
+- prefer safe defaults for higher-impact actions
+- make common workflows easy without hiding important repository state
+- provide a reusable skill that works well as a global install or as part of a shared skills workspace
+
+## Repository layout
+
+| Path | Purpose |
 | --- | --- |
-| `README.md` | project overview, current workflow, and repository intent |
-| `SKILL.md` | canonical maintained `/github` skill definition for this repository |
-| `openclaw-github-SKILL.md` | upstream reference material pulled from OpenClaw for comparison and adaptation |
-| `.claude/settings.local.json` | local Claude Code permission/config context used while iterating in this repo |
+| `SKILL.md` | Canonical skill definition |
+| `README.md` | Public project overview |
+| `openclaw-github-SKILL.md` | Reference material |
+| `.claude/settings.local.json` | Local Claude Code configuration for working in this repo |
 
-## Current usage model
+## Status
 
-The repo-local Claude-discovery copy was intentionally removed after the global install was set up, but the repository still keeps the canonical skill source in `SKILL.md`.
+The repository is the maintained source for the skill. Depending on your setup, Claude Code may consume it through a global install or via a parent workspace such as `claudespace`.
 
-Use the skill from Claude Code through:
+## License
 
-- `/github`
-
-As long as the global skill exists at `/Users/liyao/.claude/skills/github/SKILL.md`, the command can be used without depending on a repo-local `.claude/skills/github/` copy.
-
-## Why keep this repository
-
-Even with a global install, this repository remains the right place to:
-
-- refine the skill contract and operating rules
-- track reference material and revisions
-- shape how local Git and remote GitHub capabilities should be unified
-- add examples, verification notes, and future packaging decisions
-
-## Roadmap
-
-- strengthen the skill instructions and safety boundaries
-- add concrete usage examples
-- document lightweight verification flows
-- decide whether to stay global-only or restore a repo-local packaged version later
+No license file is currently included in this repository.
